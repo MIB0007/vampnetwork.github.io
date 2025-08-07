@@ -1,47 +1,137 @@
-<section style="max-width: 800px; margin: 5rem auto; padding: 2rem;">
-  <h2 style="font-size: 2.5rem; text-align: center;">🧛‍♂️ VAMP Network – FAQ</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VAMP Network – FAQ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.imgur.com/gpatFEO.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+      padding: 2rem;
+    }
 
-  <details style="margin: 1rem 0; border: 1px solid #333; border-radius: 0.5rem; padding: 1rem; background: #111; color: #eee;">
-    <summary style="font-weight: bold; cursor: pointer;">❓ What is VAMP Network?</summary>
-    <p style="margin-top: 0.5rem;">VAMP Network is a decentralized token on Solana, themed around a kawaii vampire world. It focuses on staking, NFTs, and community governance.</p>
-  </details>
+    .container {
+      max-width: 800px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 1rem;
+    }
 
-  <details style="margin: 1rem 0; border: 1px solid #333; border-radius: 0.5rem; padding: 1rem; background: #111; color: #eee;">
-    <summary style="font-weight: bold; cursor: pointer;">❓ How many VAMP tokens exist?</summary>
-    <p style="margin-top: 0.5rem;">There is a fixed supply of <strong>100,000,000 VAMP</strong>, balancing accessibility and rarity.</p>
-  </details>
+    h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-  <details style="margin: 1rem 0; border: 1px solid #333; border-radius: 0.5rem; padding: 1rem; background: #111; color: #eee;">
-    <summary style="font-weight: bold; cursor: pointer;">❓ Is there a staking system?</summary>
-    <p style="margin-top: 0.5rem;">Yes! A progressive staking system is coming soon, offering <strong>4%–8%</strong> rewards based on 3 loyalty tiers.</p>
-  </details>
+    details {
+      margin: 1rem 0;
+      border: 1px solid #444;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      background-color: #111;
+      color: #eee;
+      transition: background 0.3s ease;
+    }
 
-  <details style="margin: 1rem 0; border: 1px solid #333; border-radius: 0.5rem; padding: 1rem; background: #111; color: #eee;">
-    <summary style="font-weight: bold; cursor: pointer;">❓ Will VAMP be available on Ethereum?</summary>
-    <p style="margin-top: 0.5rem;">Yes, an Ethereum launch is part of our roadmap to bring more visibility and integration opportunities.</p>
-  </details>
+    details:hover {
+      background-color: #1a1a1a;
+    }
 
-  <details style="margin: 1rem 0; border: 1px solid #333; border-radius: 0.5rem; padding: 1rem; background: #111; color: #eee;">
-    <summary style="font-weight: bold; cursor: pointer;">❓ Will there be NFTs?</summary>
-    <p style="margin-top: 0.5rem;">Absolutely! NFT collections tied to our lore and staking mechanics are part of the project’s vision.</p>
-  </details>
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
 
-  <details style="margin: 1rem 0; border: 1px solid #333; border-radius: 0.5rem; padding: 1rem; background: #111; color: #eee;">
-    <summary style="font-weight: bold; cursor: pointer;">❓ How is liquidity handled?</summary>
-    <p style="margin-top: 0.5rem;">Liquidity will grow gradually, with pool funding scaling as our popularity and community grow.</p>
-  </details>
+    p {
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
 
-  <details style="margin: 1rem 0; border: 1px solid #333; border-radius: 0.5rem; padding: 1rem; background: #111; color: #eee;">
-    <summary style="font-weight: bold; cursor: pointer;">❓ Where can I buy/trade VAMP?</summary>
-    <p style="margin-top: 0.5rem;">If listed on a DEX like Orca, you can swap SOL for VAMP. Otherwise, follow our site & Discord for official announcements.</p>
-  </details>
+    .btn-back {
+      display: inline-block;
+      background-color: #c81d32;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      margin-bottom: 2rem;
+    }
 
-  <details style="margin: 1rem 0; border: 1px solid #333; border-radius: 0.5rem; padding: 1rem; background: #111; color: #eee;">
-    <summary style="font-weight: bold; cursor: pointer;">❓ Is the project open to partnerships?</summary>
-    <p style="margin-top: 0.5rem;">Yes! We're exploring collaborations for utility, NFTs, and community-driven use cases. Contact us via Discord!</p>
-  </details>
+    .btn-back:hover {
+      background-color: #a7162a;
+    }
 
-  <footer style="text-align: center; margin-top: 3rem; color: #888; font-size: 0.9rem;">
-    🌕 Stay tuned and help VAMP shine in the crypto night!
-  </footer>
-</section>
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="index.html" class="btn-back">← Back to Home</a>
+    <h2>🧛‍♂️ VAMP Network – FAQ</h2>
+
+    <details>
+      <summary>❓ What is VAMP Network?</summary>
+      <p>VAMP Network is a decentralized token on Solana, themed around a kawaii vampire world. It focuses on staking, NFTs, and community governance.</p>
+    </details>
+
+    <details>
+      <summary>❓ How many VAMP tokens exist?</summary>
+      <p>There is a fixed supply of <strong>100,000,000 VAMP</strong>, balancing accessibility and rarity.</p>
+    </details>
+
+    <details>
+      <summary>❓ Is there a staking system?</summary>
+      <p>Yes! A progressive staking system is coming soon, offering <strong>4%–8%</strong> rewards based on 3 loyalty tiers.</p>
+    </details>
+
+    <details>
+      <summary>❓ Will VAMP be available on Ethereum?</summary>
+      <p>Yes, an Ethereum launch is part of our roadmap to bring more visibility and integration opportunities.</p>
+    </details>
+
+    <details>
+      <summary>❓ Will there be NFTs?</summary>
+      <p>Absolutely! NFT collections tied to our lore and staking mechanics are part of the project’s vision.</p>
+    </details>
+
+    <details>
+      <summary>❓ How is liquidity handled?</summary>
+      <p>Liquidity will grow gradually, with pool funding scaling as our popularity and community grow.</p>
+    </details>
+
+    <details>
+      <summary>❓ Where can I buy/trade VAMP?</summary>
+      <p>If listed on a DEX like Orca, you can swap SOL for VAMP. Otherwise, follow our site & Discord for official announcements.</p>
+    </details>
+
+    <details>
+      <summary>❓ Is the project open to partnerships?</summary>
+      <p>Yes! We're exploring collaborations for utility, NFTs, and community-driven use cases. Contact us via Discord!</p>
+    </details>
+
+    <footer>
+      🌕 Stay tuned and help VAMP shine in the crypto night!
+    </footer>
+  </div>
+
+</body>
+</html>
