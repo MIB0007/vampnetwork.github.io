@@ -17,75 +17,89 @@
       color: #111;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      min-height: 100vh;
     }
 
     header, footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    header h1 {
+      font-size: 2.2rem;
+      margin: 0 0 0.25rem 0;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    header .lead {
+      color: #eee;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      margin: 0;
     }
 
-    p.lead {
-      font-size: 1rem;
-      margin-bottom: 2rem;
+    /* Top actions */
+    .topbar {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
     }
 
     .container {
+      margin: 2rem auto 3rem auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      margin-bottom: 3rem;
+      width: 100%;
+      max-width: 1000px;
+      padding: 0 1rem;
+      flex: 1 0 auto;
     }
 
     .card {
-      background-color: rgba(0, 0, 0, 0.85); /* transparence douce */
+      background-color: rgba(0, 0, 0, 0.85);
       color: #fff;
       border-radius: 1rem;
       padding: 2rem;
-      max-width: 300px;
-      flex: 1 1 280px;
+      max-width: 340px;
+      flex: 1 1 300px;
       text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      backdrop-filter: blur(4px);
     }
 
     .card img {
       max-width: 100%;
       max-height: 300px;
-      border-radius: 0.5rem;
+      border-radius: 0.75rem;
       margin-bottom: 1rem;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
+      margin-top: 0.75rem;
+      padding: 0.8rem 1.2rem;
       border: none;
-      border-radius: 0.5rem;
+      border-radius: 0.6rem;
       cursor: pointer;
       font-weight: bold;
       text-decoration: none;
+      transition: transform .06s ease;
+      user-select: none;
     }
+    .btn:active { transform: translateY(1px); }
 
-    .btn-faq {
-      background-color: #333;
-      color: white;
-      margin-right: 0.5rem;
-    }
-
-    .btn-wallet {
-      background-color: #c81d32;
-      color: white;
-    }
+    .btn-faq { background-color: #333; color: #fff; }
+    .btn-wallet { background-color: #c81d32; color: #fff; }
+    .btn-buy { background-color: #10b981; color: #111; }
+    .btn-roadmap { background-color: #111827; color: #fff; border: 1px solid #374151; }
 
     footer {
-      color: #888;
+      color: #bbb;
       font-size: 0.875rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -94,6 +108,14 @@
   <header>
     <h1>VAMP Network</h1>
     <p class="lead">A decentralized vampire-themed token born on Solana. Stake. Earn. Rule the night.</p>
+
+    <!-- Barre d’actions globale -->
+    <div class="topbar">
+      <a href="faq.html" class="btn btn-faq">❓ FAQ</a>
+      <a href="roadmap.html" class="btn btn-roadmap">🗺️ Roadmap</a>
+      <button id="buyBtn" class="btn btn-buy">🛒 Buy VAMP</button>
+      <button id="connectBtn" class="btn btn-wallet">Connect Wallet</button>
+    </div>
   </header>
 
   <section class="container">
@@ -101,13 +123,14 @@
       <h2>About VAMP</h2>
       <p>VAMP is a Solana SPL token with a fixed supply of 100M. Designed for staking, NFT utilities, and community-driven governance.</p>
     </div>
+
     <div class="card">
       <h2>Get Started</h2>
-      <img src="https://i.imgur.com/QgwXLt6.png" alt="VAMP Get Started"
- style="max-width:100%; max-height:300px; border-radius:1rem; margin: 2rem auto; display: block;" />
+      <img src="https://i.imgur.com/QgwXLt6.png" alt="VAMP Get Started" />
       <p>Connect your wallet and begin your journey with VAMP.</p>
       <a href="faq.html" class="btn btn-faq">❓ FAQ</a>
-      <button class="btn btn-wallet">Connect Wallet</button>
+      <button id="connectBtn2" class="btn btn-wallet">Connect Wallet</button>
+      <button id="buyBtn2" class="btn btn-buy">🛒 Buy VAMP</button>
     </div>
   </section>
 
@@ -115,5 +138,18 @@
     © 2025 VAMP Network
   </footer>
 
-</body>
-</html>
+  <script>
+    // ---- Config ----
+    const VAMP_MINT = 'Diid9YdyNTLLzoCE24ime5DpQeNSRZvyFjiTVEvWsW88';
+
+    // ---- Connect Wallet (Phantom-first) ----
+    async function connectWallet() {
+      try {
+        // Détection Phantom / solana provider
+        const provider = window.phantom?.solana || window.solana;
+        if (!provider) {
+          const go = confirm('Phantom introuvable. Voulez-vous l’installer ?');
+          if (go) window.open('https://phantom.app/', '_blank', 'noopener');
+          return;
+        }
+        const resp = await provider.con
