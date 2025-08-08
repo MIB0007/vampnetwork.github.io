@@ -2,55 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VAMP Network — Disclaimer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer - VAMP Network</title>
   <style>
-    body { margin:0; font-family: Arial, sans-serif; color:#fff;
-      background: url('https://i.imgur.com/WrV2J7P.png') center/cover fixed no-repeat; }
-    .overlay { background: rgba(0,0,0,.6); min-height:100vh; padding:2rem 1rem; }
-    .wrap { max-width:900px; margin:0 auto; background: rgba(0,0,0,.7);
-      border-radius:1rem; padding:1.5rem; box-shadow:0 10px 30px rgba(0,0,0,.35); }
-    h1,h2 { margin:0 0 .75rem 0; }
-    p,li { line-height:1.55; }
-    .topbar { display:flex; gap:.5rem; justify-content:center; margin-bottom:1rem; flex-wrap:wrap; }
-    .btn { display:inline-block; padding:.7rem 1rem; border-radius:.6rem; background:#111827; color:#fff;
-      border:1px solid #374151; text-decoration:none; font-weight:bold; }
-    footer { text-align:center; color:#ddd; margin-top:1rem; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.imgur.com/WrV2J7P.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .content {
+      background: rgba(0,0,0,0.85);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 800px;
+      width: 100%;
+      backdrop-filter: blur(4px);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 0.6rem;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      background-color: #c81d32;
+      color: #fff;
+      transition: transform 0.06s ease;
+    }
+    .btn-back:active { transform: translateY(1px); }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <div class="topbar">
-      <a href="index.html" class="btn">⬅ Back</a>
-      <a href="faq.html" class="btn">❓ FAQ</a>
-      <a href="roadmap.html" class="btn">🗺️ Roadmap</a>
-    </div>
 
-    <div class="wrap">
-      <h1>Disclaimer</h1>
-      <p>The information on this website is provided for educational and community purposes only and does not constitute financial, investment, legal, or tax advice. VAMP Network does not offer or sell securities. No content here is a solicitation to buy or sell any asset.</p>
+  <div class="content">
+    <h1>Disclaimer</h1>
+    <p><strong>English:</strong>  
+      VAMP Network is a decentralized project built on the Solana blockchain. The information provided on this website does not constitute financial advice.  
+      Cryptocurrencies are volatile and you should do your own research before making any investment.  
+      By using this site, you acknowledge and accept that all transactions are final and that the project team is not responsible for any losses.
+    </p>
+    <p><strong>Français :</strong>  
+      VAMP Network est un projet décentralisé construit sur la blockchain Solana. Les informations fournies sur ce site ne constituent pas un conseil financier.  
+      Les cryptomonnaies sont volatiles et vous devez effectuer vos propres recherches avant tout investissement.  
+      En utilisant ce site, vous reconnaissez et acceptez que toutes les transactions sont définitives et que l’équipe du projet n’est pas responsable des pertes éventuelles.
+    </p>
 
-      <h2>Risks</h2>
-      <ul>
-        <li>Digital assets are volatile and may lose value. Only risk what you can afford to lose.</li>
-        <li>On-chain interactions (swaps, staking, liquidity provision) involve smart-contract and market risks.</li>
-        <li>Third-party links (e.g., Jupiter, Orca) are provided for convenience and are outside our control.</li>
-      </ul>
-
-      <h2>No Guarantees</h2>
-      <p>No guarantees are made regarding price, liquidity, listings, yields, or future features. Past performance is not indicative of future results.</p>
-
-      <h2>Jurisdiction</h2>
-      <p>Users are responsible for complying with the laws of their jurisdiction. Accessing or using VAMP Network tools may be restricted in some regions.</p>
-
-      <h2>Trademarks & Content</h2>
-      <p>Logos and artwork are © VAMP Network unless otherwise noted. Third-party marks belong to their respective owners.</p>
-
-      <h2>Contact</h2>
-      <p>For inquiries or reports, contact us via our official channels (website or X/Twitter).</p>
-    </div>
-
-    <footer>© 2025 VAMP Network</footer>
+    <a href="index.html" class="btn-back">⬅ Back / Retour</a>
   </div>
+
 </body>
 </html>
