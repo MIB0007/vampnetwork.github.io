@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VAMP Network</title>
+  <meta name="description" content="VAMP Network — a Solana SPL token (100M supply) focused on staking, NFT utilities, and community-driven governance." />
   <style>
-    /* 🌑 Fond d'écran full screen */
+    /* Background + base */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -19,137 +20,118 @@
       flex-direction: column;
       min-height: 100vh;
     }
-
-    header, footer {
-      text-align: center;
-      padding: 1.5rem 1rem;
-    }
-
+    header, footer { text-align: center; padding: 1.5rem 1rem; }
     header h1 {
-      font-size: 2.2rem;
-      margin: 0 0 0.25rem 0;
-      color: #fff;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      font-size: 2.2rem; margin: 0 0 .25rem 0; color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,.6);
     }
     header .lead {
-      color: #eee;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-      margin: 0;
+      color: #eee; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,.6);
     }
 
     /* Top actions */
     .topbar {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 0.75rem;
-      flex-wrap: wrap;
+      display: flex; gap: .5rem; justify-content: center; margin-top: .75rem; flex-wrap: wrap;
     }
-
-    .container {
-      margin: 2rem auto 3rem auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      width: 100%;
-      max-width: 1000px;
-      padding: 0 1rem;
-      flex: 1 0 auto;
-    }
-
-    .card {
-      background-color: rgba(0, 0, 0, 0.85);
-      color: #fff;
-      border-radius: 1rem;
-      padding: 2rem;
-      max-width: 340px;
-      flex: 1 1 300px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      backdrop-filter: blur(4px);
-    }
-
-    .card img {
-      max-width: 100%;
-      max-height: 300px;
-      border-radius: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
     .btn {
-      display: inline-block;
-      margin-top: 0.75rem;
-      padding: 0.8rem 1.2rem;
-      border: none;
-      border-radius: 0.6rem;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
+      display: inline-block; padding: .8rem 1.2rem; border-radius: .6rem; border: 0;
+      font-weight: bold; text-decoration: none; cursor: pointer; user-select: none;
       transition: transform .06s ease;
-      user-select: none;
     }
     .btn:active { transform: translateY(1px); }
+    .btn-faq { background:#333; color:#fff; }
+    .btn-roadmap { background:#111827; color:#fff; border:1px solid #374151; }
+    .btn-buy { background:#10b981; color:#111; }
+    .btn-wallet { background:#c81d32; color:#fff; }
 
-    .btn-faq { background-color: #333; color: #fff; }
-    .btn-wallet { background-color: #c81d32; color: #fff; }
-    .btn-buy { background-color: #10b981; color: #111; }
-    .btn-roadmap { background-color: #111827; color: #fff; border: 1px solid #374151; }
-
-    footer {
-      color: #bbb;
-      font-size: 0.875rem;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    /* Content */
+    .container {
+      margin: 2rem auto 3rem;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;
+      width: 100%; max-width: 1000px; padding: 0 1rem; flex: 1 0 auto;
     }
+    .card {
+      background: rgba(0,0,0,.85); color:#fff; border-radius: 1rem; padding: 2rem;
+      max-width: 340px; flex: 1 1 300px; text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35); backdrop-filter: blur(4px);
+    }
+    .card img {
+      max-width: 100%; max-height: 300px; border-radius: .75rem; margin-bottom: 1rem;
+    }
+
+    footer { color: #bbb; font-size: .875rem; text-shadow: 0 2px 8px rgba(0,0,0,.3); }
   </style>
 </head>
 <body>
-
   <header>
     <h1>VAMP Network</h1>
     <p class="lead">A decentralized vampire-themed token born on Solana. Stake. Earn. Rule the night.</p>
 
-    <!-- Barre d’actions globale -->
+    <!-- Top bar only -->
     <div class="topbar">
-      <a href="faq.html" class="btn btn-faq">❓ FAQ</a>
-      <a href="roadmap.html" class="btn btn-roadmap">🗺️ Roadmap</a>
-      <button id="buyBtn" class="btn btn-buy">🛒 Buy VAMP</button>
-      <button id="connectBtn" class="btn btn-wallet">Connect Wallet</button>
+      <a href="faq.html" class="btn btn-faq" aria-label="FAQ">❓ FAQ</a>
+      <a href="roadmap.html" class="btn btn-roadmap" aria-label="Roadmap">🗺️ Roadmap</a>
+      <a
+        id="buyBtn"
+        class="btn btn-buy"
+        href="https://jup.ag/swap/SOL-Diid9YdyNTLLzoCE24ime5DpQeNSRZvyFjiTVEvWsW88"
+        target="_blank" rel="noopener"
+        aria-label="Buy VAMP on Jupiter"
+      >🛒 Buy VAMP</a>
+      <button id="connectBtn" class="btn btn-wallet" aria-label="Connect Wallet">Connect Wallet</button>
     </div>
   </header>
 
   <section class="container">
     <div class="card">
       <h2>About VAMP</h2>
-      <p>VAMP is a Solana SPL token with a fixed supply of 100M. Designed for staking, NFT utilities, and community-driven governance.</p>
+      <p>VAMP is a Solana SPL token with a fixed supply of 100M. Built for staking rewards, NFT utilities, and community-driven governance.</p>
     </div>
 
     <div class="card">
       <h2>Get Started</h2>
-      <img src="https://i.imgur.com/QgwXLt6.png" alt="VAMP Get Started" />
-      <p>Connect your wallet and begin your journey with VAMP.</p>
-      <a href="faq.html" class="btn btn-faq">❓ FAQ</a>
-      <button id="connectBtn2" class="btn btn-wallet">Connect Wallet</button>
-      <button id="buyBtn2" class="btn btn-buy">🛒 Buy VAMP</button>
+      <img src="https://i.imgur.com/QgwXLt6.png" alt="VAMP welcome artwork" />
+      <p>Connect your wallet and start your journey with VAMP.</p>
+      <!-- (No extra buttons here — kept clean) -->
     </div>
   </section>
 
-  <footer>
-    © 2025 VAMP Network
-  </footer>
+  <footer>© 2025 VAMP Network</footer>
 
   <script>
-    // ---- Config ----
+    // --- Config ---
     const VAMP_MINT = 'Diid9YdyNTLLzoCE24ime5DpQeNSRZvyFjiTVEvWsW88';
 
-    // ---- Connect Wallet (Phantom-first) ----
+    // --- Connect Wallet (Phantom-first, minimal + robust) ---
     async function connectWallet() {
       try {
-        // Détection Phantom / solana provider
         const provider = window.phantom?.solana || window.solana;
         if (!provider) {
-          const go = confirm('Phantom introuvable. Voulez-vous l’installer ?');
+          const go = confirm('Phantom not detected. Install it?');
           if (go) window.open('https://phantom.app/', '_blank', 'noopener');
           return;
         }
-        const resp = await provider.con
+        const resp = await provider.connect(); // opens Phantom popup
+        const pubkey = resp?.publicKey?.toString?.() || provider?.publicKey?.toString?.();
+        if (pubkey) {
+          const b = document.getElementById('connectBtn');
+          if (b) { b.textContent = 'Connected ✓'; b.disabled = true; }
+          console.log('Wallet connected:', pubkey);
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Connection rejected or wallet error.');
+      }
+    }
+
+    // Bind after DOM is ready
+    (function init(){
+      document.getElementById('connectBtn')?.addEventListener('click', connectWallet);
+      // Bonus: ensure Buy link still works even if popup blockers are strict
+      document.getElementById('buyBtn')?.addEventListener('click', (e) => {
+        // we keep it as link; no JS needed, this is just a safety net
+      });
+    })();
+  </script>
+</body>
+</html>
