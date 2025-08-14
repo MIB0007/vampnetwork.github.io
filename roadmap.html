@@ -10,13 +10,20 @@
       font-family: Arial, sans-serif;
       min-height: 100vh;
       background-image: url('https://i.imgur.com/8IHTPQK.png');
-      background-size: cover;
-      background-position: center;
+      background-position: top center;
+      background-size: clamp(1200px, 90vw, 1600px) auto;
       background-repeat: no-repeat;
       background-attachment: fixed;
       display: flex;
       flex-direction: column;
       color: #fff;
+    }
+    @media (max-width: 1200px) {
+      body {
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+      }
     }
     .overlay {
       background: rgba(0,0,0,0.55);
@@ -47,7 +54,6 @@
       transition: transform .06s ease;
     }
     .btn:active { transform: translateY(1px); }
-
     .langlinks {
       display: flex;
       justify-content: center;
@@ -55,7 +61,6 @@
       margin-bottom: .25rem;
       flex-wrap: wrap;
     }
-
     .content {
       width: 100%;
       max-width: 900px;
@@ -85,13 +90,11 @@
       <a href="faq.html" class="btn">❓ FAQ</a>
     </div>
 
-    <!-- liens rapides EN/FR -->
     <div class="langlinks">
       <a href="#en" class="btn">EN</a>
       <a href="#fr" class="btn">FR</a>
     </div>
 
-    <!-- ===== EN (prioritaire) ===== -->
     <div id="en" class="content">
       <h1>VAMP Roadmap (EN)</h1>
       <p class="muted">High-level vision and milestones for VAMP Network.</p>
@@ -126,7 +129,6 @@
       </ul>
     </div>
 
-    <!-- ===== FR ===== -->
     <div id="fr" class="content">
       <h1>VAMP Roadmap (FR)</h1>
       <p>Vision générale et jalons majeurs pour VAMP Network.</p>
@@ -165,4 +167,3 @@
   </div>
 </body>
 </html>
-
