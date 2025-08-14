@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VAMP Network</title>
   <meta name="description" content="VAMP Network — a Solana SPL token (100M supply) focused on staking, NFT utilities, and community-driven governance." />
+
+  <!-- Open Graph / Twitter cards -->
+  <meta property="og:title" content="VAMP Network" />
+  <meta property="og:description" content="A Solana SPL token (100M supply) with staking rewards, NFT utilities, and community governance." />
+  <meta property="og:image" content="https://mib00007.github.io/vampnetwork.github.io/vamp-banner.png" />
+  <meta property="og:url" content="https://mib00007.github.io/vampnetwork.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Vamp_Network" />
+
   <style>
     /* Background + base */
     body {
@@ -34,7 +43,7 @@
       display: flex; gap: .5rem; justify-content: center; margin-top: .75rem; flex-wrap: wrap;
     }
     .btn {
-      display: inline-block; padding: .8rem 1.2rem; border-radius: .6rem; border: 0;
+      display: inline-block; padding: .8rem 1.1rem; border-radius: .6rem; border: 0;
       font-weight: bold; text-decoration: none; cursor: pointer; user-select: none;
       transition: transform .06s ease;
     }
@@ -43,6 +52,8 @@
     .btn-roadmap { background:#111827; color:#fff; border:1px solid #374151; }
     .btn-buy { background:#10b981; color:#111; }
     .btn-wallet { background:#c81d32; color:#fff; }
+    .btn-x { background:#000; color:#fff; }
+    .btn-discord { background:#5865F2; color:#fff; }
 
     /* Content */
     .container {
@@ -58,6 +69,11 @@
     .card img {
       max-width: 100%; max-height: 300px; border-radius: .75rem; margin-bottom: 1rem;
     }
+    .card h2, .card h3 { margin-top: 0; }
+    .list { text-align: left; margin: .75rem 0 0; padding-left: 1rem; }
+    .list li { margin: .4rem 0; }
+    .small-links { margin-top: .75rem; font-size: .9rem; opacity: .95; }
+    .small-links a { color: #fff; text-decoration: underline; }
 
     footer { color: #bbb; font-size: .875rem; text-shadow: 0 2px 8px rgba(0,0,0,.3); }
     footer a { color:#fff; text-decoration:underline; }
@@ -80,14 +96,43 @@
         target="_blank" rel="noopener"
         aria-label="Buy VAMP on Raydium"
       >🛒 Buy VAMP</a>
+      <a href="https://x.com/Vamp_Network" class="btn btn-x" target="_blank" rel="noopener" aria-label="Follow on X">𝕏 Follow</a>
+      <a href="https://discord.gg/rErJXrwvzg" class="btn btn-discord" target="_blank" rel="noopener" aria-label="Join our Discord">Discord</a>
       <button id="connectBtn" class="btn btn-wallet" aria-label="Connect Wallet">Connect Wallet</button>
     </div>
   </header>
 
   <section class="container">
     <div class="card">
-      <h2>About VAMP</h2>
-      <p>VAMP is a Solana SPL token with a fixed supply of 100M. Built for staking rewards, NFT utilities, and community-driven governance.</p>
+      <h2>🦇 VAMP Network 🦇</h2>
+      <p>Welcome to the world of <strong>Vampy</strong>, our adorable kawaii vampire 🧛‍♂️ with a bold mission: to build a rare, community‑driven and sustainable token on the Solana ecosystem.</p>
+
+      <h3>🌙 Key Features</h3>
+      <ul class="list">
+        <li>🔒 <strong>Limited Supply</strong> — Only <strong>100,000,000 VAMP</strong>, balancing accessibility and scarcity.</li>
+        <li>🪙 <strong>Progressive Staking</strong> — Rewards range from <strong>4% to 8%</strong>, with 3 tiers to incentivize loyalty and sustainable growth.</li>
+        <li>🦇 <strong>Kawaii & Dark Community</strong> — A unique world of adorable bats and mysterious vibes — cute meets cryptic.</li>
+        <li>🏰 <strong>Long‑Term Vision</strong> — A transparent and evolving ecosystem built around VAMP Network.</li>
+      </ul>
+
+      <h3>💬 Join the Night Clan</h3>
+      <p>
+        <a href="https://discord.gg/rErJXrwvzg" class="btn btn-discord" target="_blank" rel="noopener">Join Discord</a>
+        <a href="https://x.com/Vamp_Network" class="btn btn-x" target="_blank" rel="noopener">Follow on X</a>
+      </p>
+
+      <h3>$VAMP Transparency (Solana)</h3>
+      <ul class="list">
+        <li><strong>Mint</strong>: <code>Gfcdwk1QxmFh6z1fEGzpyAAX6FGEDJXKWcx7PQaMzvTz</code></li>
+        <li><strong>Supply</strong>: 100,000,000 VAMP (capped)</li>
+        <li><strong>Mint Authority</strong>: N/A</li>
+        <li><strong>Freeze Authority</strong>: N/A</li>
+      </ul>
+      <p class="small-links">
+        <a href="https://rugcheck.xyz/tokens/Gfcdwk1QxmFh6z1fEGzpyAAX6FGEDJXKWcx7PQaMzvTz" target="_blank" rel="noopener">Rugcheck</a>
+        ·
+        <a href="https://solscan.io/token/Gfcdwk1QxmFh6z1fEGzpyAAX6FGEDJXKWcx7PQaMzvTz" target="_blank" rel="noopener">Solscan</a>
+      </p>
     </div>
 
     <div class="card">
@@ -103,7 +148,7 @@
 
   <script>
     // --- Config ---
-    const VAMP_MINT = 'Gfcdwk1QxmFh6z1fEGzpyAAX6FGEDJXKWcx7PQaMzvTz'; // corrigé
+    const VAMP_MINT = 'Gfcdwk1QxmFh6z1fEGzpyAAX6FGEDJXKWcx7PQaMzvTz';
 
     // --- Connect Wallet (Phantom-first) ---
     async function connectWallet() {
