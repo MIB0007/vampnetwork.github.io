@@ -4,22 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VAMP Network</title>
-  <meta name="description" content="VAMP Network — a Solana SPL token (100M supply) focused on staking, NFT utilities, and community-driven governance." />
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="VAMP Network — Business & Gaming Utility Token on Solana. 100M capped supply. Progressive staking (4–8%) coming. On-chain transparency and long-term partnerships." />
 
   <!-- Open Graph / Twitter cards -->
-  <meta property="og:title" content="VAMP Network" />
-  <meta property="og:description" content="A Solana SPL token (100M supply) with staking rewards, NFT utilities, and community governance." />
+  <meta property="og:title" content="VAMP Network — Business & Gaming Utility Token" />
+  <meta property="og:description" content="Reliable and sustainable Solana token for business & gaming integrations. 100M capped supply. Progressive staking coming." />
   <meta property="og:image" content="https://mib00007.github.io/vampnetwork.github.io/vamp-banner.png" />
   <meta property="og:url" content="https://mib00007.github.io/vampnetwork.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Vamp_Network" />
 
   <style>
+    :root{
+      --bg-dark: rgba(0,0,0,.85);
+      --text: #fff;
+      --muted:#cfd4dc;
+      --accent:#10b981;
+      --stroke:#374151;
+    }
+
     /* Background + base */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url('https://i.imgur.com/WrV2J7P.png');
+      background-image: url('https://i.imgur.com/WrV2J7P.png'); /* remplace par ton fond “bleu/jaune corporate” quand prêt */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -29,13 +39,22 @@
       flex-direction: column;
       min-height: 100vh;
     }
+    /* subtle overlay to mute the background for a more corporate look */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.45));
+      pointer-events:none;
+      z-index:-1;
+    }
+
     header, footer { text-align: center; padding: 1.5rem 1rem; }
     header h1 {
       font-size: 2.2rem; margin: 0 0 .25rem 0; color: #fff;
       text-shadow: 0 2px 8px rgba(0,0,0,.6);
     }
     header .lead {
-      color: #eee; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,.6);
+      color: var(--muted); margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,.6);
     }
 
     /* Top actions */
@@ -45,12 +64,13 @@
     .btn {
       display: inline-block; padding: .8rem 1.1rem; border-radius: .6rem; border: 0;
       font-weight: bold; text-decoration: none; cursor: pointer; user-select: none;
-      transition: transform .06s ease;
+      transition: transform .06s ease, opacity .2s ease;
     }
     .btn:active { transform: translateY(1px); }
+    .btn:hover { opacity: .9; }
     .btn-faq { background:#333; color:#fff; }
-    .btn-roadmap { background:#111827; color:#fff; border:1px solid #374151; }
-    .btn-buy { background:#10b981; color:#111; }
+    .btn-roadmap { background:#111827; color:#fff; border:1px solid var(--stroke); }
+    .btn-buy { background:var(--accent); color:#111; }
     .btn-wallet { background:#c81d32; color:#fff; }
     .btn-x { background:#000; color:#fff; }
     .btn-discord { background:#5865F2; color:#fff; }
@@ -62,29 +82,33 @@
       width: 100%; max-width: 1000px; padding: 0 1rem; flex: 1 0 auto;
     }
     .card {
-      background: rgba(0,0,0,.85); color:#fff; border-radius: 1rem; padding: 2rem;
-      max-width: 340px; flex: 1 1 300px; text-align: center;
+      background: var(--bg-dark); color:var(--text); border-radius: 1rem; padding: 2rem;
+      max-width: 340px; flex: 1 1 300px; text-align: left;
       box-shadow: 0 10px 30px rgba(0,0,0,.35); backdrop-filter: blur(4px);
     }
+    .card.center { text-align: center; }
     .card img {
       max-width: 100%; max-height: 300px; border-radius: .75rem; margin-bottom: 1rem;
     }
     .card h2, .card h3 { margin-top: 0; }
-    .list { text-align: left; margin: .75rem 0 0; padding-left: 1rem; }
+    .list { margin: .75rem 0 0; padding-left: 1rem; }
     .list li { margin: .4rem 0; }
     .small-links { margin-top: .75rem; font-size: .9rem; opacity: .95; }
     .small-links a { color: #fff; text-decoration: underline; }
 
     footer { color: #bbb; font-size: .875rem; text-shadow: 0 2px 8px rgba(0,0,0,.3); }
     footer a { color:#fff; text-decoration:underline; }
+
+    /* tiny screen polish */
+    @media (max-width:420px){ header h1{font-size:1.8rem} }
   </style>
 </head>
 <body>
   <header>
     <h1>VAMP Network</h1>
-    <p class="lead">A decentralized vampire-themed token born on Solana. Stake. Earn. Rule the night.</p>
+    <p class="lead">Business &amp; Gaming Utility Token on Solana — reliable, sustainable, integration-ready.</p>
 
-    <!-- Top bar (unique) -->
+    <!-- Top bar -->
     <div class="topbar">
       <a href="faq.html" class="btn btn-faq" aria-label="FAQ">❓ FAQ</a>
       <a href="roadmap.html" class="btn btn-roadmap" aria-label="Roadmap">🗺️ Roadmap</a>
@@ -103,23 +127,42 @@
   </header>
 
   <section class="container">
+    <!-- Corporate presentation -->
     <div class="card">
       <h2>🦇 VAMP Network 🦇</h2>
-      <p>Welcome to the world of <strong>Vampy</strong>, our adorable kawaii vampire 🧛‍♂️ with a bold mission: to build a rare, community‑driven and sustainable token on the Solana ecosystem.</p>
+      <p><strong>Business &amp; Gaming Utility Token</strong></p>
+      <p><strong>Mission:</strong> To create a reliable and sustainable token on the Solana ecosystem, designed to integrate with business projects, gaming platforms, and high-value partnerships.</p>
 
-      <h3>🌙 Key Features</h3>
+      <h3>🌙 Core Utility</h3>
       <ul class="list">
-        <li>🔒 <strong>Limited Supply</strong> — Only <strong>100,000,000 VAMP</strong>, balancing accessibility and scarcity.</li>
-        <li>🪙 <strong>Progressive Staking</strong> — Rewards range from <strong>4% to 8%</strong>, with 3 tiers to incentivize loyalty and sustainable growth.</li>
-        <li>🦇 <strong>Kawaii & Dark Community</strong> — A unique world of adorable bats and mysterious vibes — cute meets cryptic.</li>
-        <li>🏰 <strong>Long‑Term Vision</strong> — A transparent and evolving ecosystem built around VAMP Network.</li>
+        <li>Integration token for business and gaming platforms (payments, premium access, points/rewards systems).</li>
+        <li>🪙 <strong>Progressive Staking Rewards</strong> (4% to 8%, depending on lock duration), to be deployed once infrastructure is in place.</li>
+        <li>🤝 Strategic partnerships planned to expand use cases (platforms, events, marketplaces).</li>
+      </ul>
+
+      <h3>🔑 Key Features</h3>
+      <ul class="list">
+        <li>🔒 <strong>Fixed Supply:</strong> 100,000,000 VAMP (balanced scarcity and accessibility).</li>
+        <li>⚡ <strong>Blockchain:</strong> Solana — speed, low fees, scalability.</li>
+        <li>🌐 <strong>Open Ecosystem:</strong> Designed for easy integration of new features via API and smart contracts.</li>
+        <li>📜 <strong>Transparency &amp; Sustainability:</strong> Progressive development with public milestone updates.</li>
+      </ul>
+
+      <h3>📈 Long-Term Vision</h3>
+      <ul class="list">
+        <li>Become a reference token for gaming and online service economies on Solana.</li>
+        <li>🏰 Build a community hub for partner projects utilizing VAMP.</li>
+        <li>Establish a sustainable presence through tools, technical documentation, and partner support.</li>
       </ul>
 
       <h3>💬 Join the Night Clan</h3>
       <p>
-        <a href="https://discord.gg/rErJXrwvzg" class="btn btn-discord" target="_blank" rel="noopener">Join Discord</a>
-        <a href="https://x.com/Vamp_Network" class="btn btn-x" target="_blank" rel="noopener">Follow on X</a>
+        ➡️ <a href="https://discord.gg/rErJXrwvzg" class="btn btn-discord" target="_blank" rel="noopener">Discord</a><br>
+        ➡️ <a href="https://mib0007.github.io/vampnetwork.github.io/" target="_blank" rel="noopener">Website</a><br>
+        ➡️ <a href="https://x.com/Vamp_Network" class="btn btn-x" target="_blank" rel="noopener">X</a>
       </p>
+
+      <p>✨ Be part of the nocturnal clan and help us make the moon 🌕 shine above the crypto community!</p>
 
       <h3>$VAMP Transparency (Solana)</h3>
       <ul class="list">
@@ -135,9 +178,10 @@
       </p>
     </div>
 
-    <div class="card">
+    <!-- Right card kept generic -->
+    <div class="card center">
       <h2>Get Started</h2>
-      <img src="https://i.imgur.com/QgwXLt6.png" alt="VAMP welcome artwork" />
+      <img src="https://mib00007.github.io/vampnetwork.github.io/vamp-banner.png" alt="VAMP banner" />
       <p>Connect your wallet and start your journey with VAMP.</p>
     </div>
   </section>
